@@ -40,20 +40,21 @@ class evamaria(Client):
         )
 
 # Bot information
-SESSION = environ.get('SESSION', 'Media_search')
-API_ID = int(environ('API_ID', '10261086'))
-API_HASH = environ('API_HASH', '9195dc0591fbdb22b5711bcd1f437dab')
-BOT_TOKEN = environ('BOT_TOKEN', '5756585201:AAHkzocwnjzuJOGSf2pYq364quL0MYrlCuM')
+SESSION = environ.get('SESSION', 'lazyPrinces')
+API_ID = int(environ.get('API_ID', '10261086'))
+API_HASH = environ.get('API_HASH', '9195dc0591fbdb22b5711bcd1f437dab')
+BOT_TOKEN = environ.get('BOT_TOKEN', "5756585201:AAHkzocwnjzuJOGSf2pYq364quL0MYrlCuM")
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
-PICS = (environ.get('PICS', 'https://telegra.ph/file/2992a480cae2bc0de1c39.jpg https://telegra.ph/file/76e7b5e94430b84a3d2b2.jpg https://telegra.ph/file/3544a8773740b0412c9dd.jpg https://telegra.ph/file/4b1c7004ea8bd3fed8df9.jpg https://telegra.ph/file/a02e47d932adc336740fa.jpg')).split()
+PICS = (environ.get('PICS', 'https://telegra.ph/file/d322f9b8210f8b87bffa8.jpg https://telegra.ph/file/fb4505e0408550edbeeda.jpg https://telegra.ph/file/cb0951d66117f17663d59.jpg https://telegra.ph/file/f32d30abaff67a5bc3466.jpg https://telegra.ph/file/379dd6e98da3e306f61db.jpg https://telegra.ph/file/fb15b6548f92ebfefd15b.jpg https://telegra.ph/file/3276986ea231f32475dd5.jpg https://telegra.ph/file/9a3fc793783073ecd0d79.jpg https://telegra.ph/file/5d0c1169de10b1e483919.jpg https://telegra.ph/file/23e36b9d3cf930f5ad7c9.jpg https://telegra.ph/file/4a7ec5cb70fbccff2803c.jpg https://telegra.ph/file/527f0143e720a939427cf.jpg https://telegra.ph/file/fde6c77a6b9f481a087e3.jpg https://telegra.ph/file/0ef2fbd85977561641ba8.jpg https://telegra.ph/file/fdb1f5690782bb893d2ef.jpg https://telegra.ph/file/468aa6c64a03a3dc4ec19.jpg https://telegra.ph/file/e3aa132245c1b0bb808ca.jpg https://telegra.ph/file/87b83fe05afbd8c541b96.jpg https://telegra.ph/file/582e17bf4059ed53adad7.jpg https://telegra.ph/file/abbe091c57bbad6e35e5c.jpg https://telegra.ph/file/81ab119f9bc00708a841d.jpg https://telegra.ph/file/5d3821f7828673a770ce4.jpg https://telegra.ph/file/f6ed9ff9fcbb85081c20b.jpg https://telegra.ph/file/1e016fe77511c8a57f082.jpg https://telegra.ph/file/ac85dd1f4abc63324c624.jpg https://telegra.ph/file/cd65f1a982b815f21a62b.jpg https://telegra.ph/file/d447ab59b818d1274a96d.jpg https://telegra.ph/file/ec33900c3676dcc919644.jpg https://telegra.ph/file/0def63a5729c9f1d03e96.jpg')).split()
+HS_PICS = (environ.get('HS_PICS', 'https://telegra.ph/file/bd814119cd2e9de184bda.jpg https://telegra.ph/file/c0c0817638eef1d423366.jpg https://telegra.ph/file/475a496d987a5826ce468.jpg https://telegra.ph/file/ecd2c09e0ca6be8c72ea4.jpg')).split()
 NOR_IMG = environ.get('NOR_IMG', "https://telegra.ph/file/7d7cbf0d6c39dc5a05f5a.jpg")
 SPELL_IMG = environ.get('SPELL_IMG',"https://telegra.ph/file/b58f576fed14cd645d2cf.jpg")
 
 # Welcome area
-MELCOW_IMG = environ.get('MELCOW_IMG',"https://telegra.ph/file/e54cae941b9b81f13eb71.jpg")
+MELCOW_IMG = environ.get('MELCOW_IMG',"https://te.legra.ph/file/35610b78fd5d031c2ec6a.jpg")
 MELCOW_VID = environ.get('MELCOW_VID',"")
 
 
@@ -61,13 +62,13 @@ MELCOW_VID = environ.get('MELCOW_VID',"")
 # Admins, Channels & Users
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '1426588906').split()]
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001878854070').split()]
-auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
+auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '889497512').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
-auth_channel = environ.get('AUTH_CHANNEL')
+auth_channel = environ.get('AUTH_CHANNEL', '0')
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
-support_chat_id = environ.get('SUPPORT_CHAT_ID')
+
 # This is required for the plugins involving the file system.
 TMP_DOWNLOAD_DIRECTORY = environ.get("TMP_DOWNLOAD_DIRECTORY", "./DOWNLOADS/")
 
@@ -84,8 +85,8 @@ MONGO_URL = os.environ.get('MONGO_URL', "")
 DOWNLOAD_LOCATION = environ.get("DOWNLOAD_LOCATION", "./DOWNLOADS/AudioBoT/")
 
 #url links
-SHORTLINK_URL = environ.get('SHORTLINK_URL', 'shorturllink.in')
-SHORTLINK_API = environ.get('SHORTLINK_API', '3a3935e37c74a2384f7a689c414f078ab6320785')
+SHORTLINK_URL = environ.get('SHORTLINK_URL', 'tnlink.in')
+SHORTLINK_API = environ.get('SHORTLINK_API', 'ec72f63f7a24370058610e02813fff3ec317f4c0')
 IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', False))
 
 #Auto approve 
@@ -99,9 +100,9 @@ SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
 PORT = os.environ.get("PORT", "8080")
 MAX_BTN = int(environ.get('MAX_BTN', "7"))
-S_GROUP = environ.get('S_GROUP',"https://t.me/Elsasupportgp")
-MAIN_CHANNEL = environ.get('MAIN_CHANNEL',"https://t.me/+1iWSCrpI_083MDM1")
-FILE_FORWARD = environ.get('FILE_FORWARD',"https://t.me/+1dbVg9pA2GphZmI1")
+S_GROUP = environ.get('S_GROUP',"https://t.me/+4x1dVrlHYFM3MTc1")
+MAIN_CHANNEL = environ.get('MAIN_CHANNEL',"https://t.me/TAMIL_FLIMS_HD")
+FILE_FORWARD = environ.get('FILE_FORWARD',"")
 MSG_ALRT = environ.get('MSG_ALRT', '𝑪𝑯𝑬𝑪𝑲 & 𝑻𝑹𝒀 𝑨𝑳𝑳 𝑴𝒀 𝑭𝑬𝑨𝑻𝑼𝑹𝑬𝑺')
 FILE_CHANNEL = int(environ.get('FILE_CHANNEL', 0))
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001606248152'))
